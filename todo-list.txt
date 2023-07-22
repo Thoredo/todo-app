@@ -1,5 +1,10 @@
 Prepare
-Clean the bag
-Shower
+Clean The Keyboard
 Dishes
 Master Python!
+Shower
+Test Code
+Add a todo
+Do something
+Do something else
+See if bug is gone
