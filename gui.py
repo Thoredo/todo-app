@@ -32,7 +32,7 @@ while True:
             todo_list = functions.get_todo_list()
             new_todo = values['todo']
             if new_todo != "":
-                todo_list.append(new_todo + "\n")
+                todo_list.append(new_todo)
                 functions.write_todo_list(todo_list)
                 window['todo_list'].update(values=todo_list)
 
@@ -44,7 +44,7 @@ while True:
                 todo_list = functions.get_todo_list()
                 index = todo_list.index(todo_to_edit)
                 if new_todo != "":
-                    todo_list[index] = new_todo + "\n"
+                    todo_list[index] = new_todo
                     functions.write_todo_list(todo_list)
                     window['todo_list'].update(values=todo_list)
             except IndexError:
