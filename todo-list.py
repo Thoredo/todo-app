@@ -1,6 +1,11 @@
 import functions
 import PySimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("todo-list.txt"):
+    with open("todo-list.txt", "w") as file:
+        pass
 
 sg.theme("DarkBlue")
 
@@ -48,7 +53,8 @@ while True:
                     functions.write_todo_list(todo_list)
                     window['todo_list'].update(values=todo_list)
             except IndexError:
-                sg.Popup("Please select an item first.", font=("Helvetica", 20))
+                sg.popup("Please select an item first.", font=("Helvetica", 20))
+
         case "Complete":
             try:
                 todo_to_complete = values['todo_list'][0]
@@ -58,13 +64,16 @@ while True:
                 window['todo_list'].update(values=todo_list)
                 window['todo'].update(value="")
             except IndexError:
-                sg.Popup("Please select an item first.", font=("Helvetica", 20))
+                sg.popup("Please select an item first.", font=("Helvetica", 20))
 
         case "Exit":
             break
 
         case "todo_list":
-            window['todo'].update(value=values['todo_list'][0])
+            try:
+                window['todo'].update(value=values['todo_list'][0])
+            except IndexError:
+                sg.popup("Your list is empty, please add an item first", font=("Helvetica", 20))
 
         case sg.WIN_CLOSED:
             break
