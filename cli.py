@@ -14,7 +14,7 @@ while True:
 
         todo_list = functions.get_todo_list()
 
-        todo_list.append(todo + '\n')
+        todo_list.append(todo)
 
         functions.write_todo_list(todo_list)
 
@@ -22,7 +22,6 @@ while True:
         todo_list = functions.get_todo_list()
         
         for index, todo in enumerate(todo_list):
-            todo = todo.strip('\n')
             row = f"{index + 1}: {todo}"
             print(row)
 
@@ -33,9 +32,9 @@ while True:
 
             todo_list = functions.get_todo_list()
 
-            current_todo = todo_list[number].strip('\n')
+            current_todo = todo_list[number]
             new_todo = input(f"What do you want to replace '{current_todo}' with: ")
-            todo_list[number] = new_todo + "\n"
+            todo_list[number] = new_todo
 
             functions.write_todo_list(todo_list)
         except ValueError:
@@ -52,7 +51,7 @@ while True:
             todo_list = functions.get_todo_list()
 
             index = number - 1
-            todo_to_remove = todo_list[index].strip('\n')
+            todo_to_remove = todo_list[index]
             todo_list.pop(index)
 
             functions.write_todo_list(todo_list)
