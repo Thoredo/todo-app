@@ -1,9 +1,3 @@
-Prepare
-Clean The Keyboard
-Dishes
-Master Python!
-Shower
-Test Code
-Add a todo
-Do something
-Do something else
+Drink
+Lunch
+Do the code experiment
